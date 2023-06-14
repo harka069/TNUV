@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">sparovcek2</string>
+    <string-array name="array_odhodkov">
+        <item>Hrana</item>
+        <item>Najemnina</item>
+        <item>Avto</item>
+        <item>Oblačila</item>
+        <item>Zdravje</item>
+        <item>Šport</item>
+        <item>Potovanje</item>
+    </string-array>
+    <string-array name="array_prihodkov">
+        <item>Plača</item>
+        <item>Štipendija</item>
+        <item>Fušanje</item>
+        <item>Ostalo</item>
+    </string-array>
+    <string-array name="array_vrsta">
+        <item>Odhodek</item>
+        <item>Prihodek</item>
+
+    </string-array>
+
+
+</resources>
