@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,11 +13,16 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.time.DayOfWeek;
+import java.util.Date;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     private Calendar calendar;
+
+    private String datum;
     private DatePickerDialog datePickerDialog;
+
 
 
     @Override
@@ -46,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+
         //koledar
         final TextView textView = findViewById(R.id.editTextDate);
         textView.setOnClickListener(new View.OnClickListener() {
@@ -61,13 +68,20 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         // Update the selected date in the TextView
-                        String date = dayOfMonth + "/" + (month + 1) + "/" + year;
-                        textView.setText(date);
+                        datum = dayOfMonth + "/" + (month + 1) + "/" + year;
+                        textView.setText(datum);
+
                     }
                 },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH));
+
+
+
+
+
+
 
 
         //pritisk tipke shrani odhodek
@@ -76,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 showToast();
+                Log.d("LOGGERspinner1",  spinner.getSelectedItem().toString());
+                Log.d("LOGGERspinner1",  spinnerVrsta.getSelectedItem().toString());
+                Log.d("LOGGERdatum",  datum);
             }
         });
     }
