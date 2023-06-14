@@ -1,27 +1,34 @@
 package com.example.sparovcek2;
-
+//test
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.time.DayOfWeek;
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     private Calendar calendar;
+    private DatePickerDialog datePickerDialog;
+
+    private Spinner tip;
+    private Spinner kategorija;
+    private EditText cena;
+    private EditText opis;
 
     private String datum;
-    private DatePickerDialog datePickerDialog;
 
 
 
@@ -52,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-
         //koledar
         final TextView textView = findViewById(R.id.editTextDate);
         textView.setOnClickListener(new View.OnClickListener() {
@@ -70,29 +76,69 @@ public class MainActivity extends AppCompatActivity {
                         // Update the selected date in the TextView
                         datum = dayOfMonth + "/" + (month + 1) + "/" + year;
                         textView.setText(datum);
-
                     }
                 },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH));
 
+        //vnos cene
+        cena = findViewById(R.id.editTextAmount);
 
-
-
-
-
-
+        //vnos opisa transakcije
+        opis = findViewById(R.id.editDescription);
 
         //pritisk tipke shrani odhodek
         Button submitButton = findViewById(R.id.buttonOdhodekSave);
         submitButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+
+                AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                        AppDatabase.class, "database-name").build();
+
+                DAO_class Dao = db.Dao();
+
+                new Thread() {
+
+                    @Override
+                    public void run() {
+                        String tiptransakcije = spinnerVrsta.getSelectedItem().toString();
+                        String datumtransakcije = datum;
+                        String kategorijatransakcije = spinner.getSelectedItem().toString();
+                        float cenatransakcije = Float.parseFloat(cena.getText().toString());
+                        String opistransakcije = opis.getText().toString();
+
+                        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+                        Date datum = null;
+                        try {
+                            datum = format.parse(datumtransakcije);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                        long time = datum.toInstant().toEpochMilli()/1000L;
+
+                        Transaction record = new Transaction();
+                        record.setType(tiptransakcije);
+                        record.setDate(time);
+                        record.setCategory(kategorijatransakcije);
+                        record.setSum(cenatransakcije);
+                        record.setDescription(opistransakcije);
+
+                        Dao.insertRecord(record);
+
+
+                    }
+                }.start();
+
                 showToast();
-                Log.d("LOGGERspinner1",  spinner.getSelectedItem().toString());
-                Log.d("LOGGERspinner1",  spinnerVrsta.getSelectedItem().toString());
-                Log.d("LOGGERdatum",  datum);
+
+                spinnerVrsta.setSelection(0);
+                textView.setText("");
+                spinner.setSelection(0);
+                cena.setText("");
+                opis.setText("");
+
             }
         });
     }
