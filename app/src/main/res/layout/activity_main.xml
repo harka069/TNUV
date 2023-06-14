@@ -37,7 +37,7 @@ tools:ignore="HardcodedText">
     android:textSize="18sp"
     android:textColor="#333333"
     android:paddingTop="16dp" />
-<EditText
+<TextView
     android:id="@+id/editTextDate"
     android:textColorHint="#ffffff"
     android:textColor="#ffffff"
@@ -108,13 +108,13 @@ tools:ignore="HardcodedText">
     android:textColorHint="#ffffff"
     android:background="@drawable/edittext_rounded_bg" />
 
-<Button
-    android:id="@+id/buttonOdhodekSave"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Shrani odhodek"
-    android:textSize="18sp"
-    android:layout_marginTop="16dp"
-    android:background="@drawable/button_rounded_bg" />
+    <Button
+        android:id="@+id/buttonOdhodekSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_rounded_bg"
+        android:text="Shrani odhodek"
+        android:textSize="18sp" />
 
 </LinearLayout>
