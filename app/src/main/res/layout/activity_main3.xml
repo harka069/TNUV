@@ -118,8 +118,10 @@ tools:ignore="HardcodedText">
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="16dp"
-            android:background="@drawable/button_rounded_bg"
+            android:layout_marginEnd="8dp"
+            android:maxLines="1"
             android:text="Shrani odhodek"
+            android:background="@drawable/button_rounded_bg"
             android:textSize="18sp" />
 
         <Button
@@ -128,9 +130,10 @@ tools:ignore="HardcodedText">
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="8dp"
+            android:maxLines="1"
+            android:text="Nazaj"
             android:background="@drawable/button_rounded_bg"
-            android:text="Pregled meseca"
             android:textSize="18sp" />
 
     </LinearLayout>

@@ -16,5 +16,7 @@ public interface DAO_class {
 
     @Insert
     void insertRecord(Transaction trans);
+    @Query("DELETE FROM [transaction]")
+    void deleteAll();
 
 }

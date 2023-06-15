@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity3">
+
+    <ImageView
+        android:layout_width="330dp"
+        android:layout_height="363dp"
+        android:layout_gravity="center"
+        android:scaleType="centerInside"
+        android:src="@drawable/portafoglio_architetto_f_01" />
+
+    <Button
+        android:id="@+id/btnPregled"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Pregled" />
+
+    <Button
+        android:id="@+id/btnVnesiSpremembo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Vnesi odhodek / prihodek" />
+
+    <Button
+        android:id="@+id/btnZbrisiPodatke"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Zbrisi podatke" />
+
+    <Button
+        android:id="@+id/exportCSV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Export to CSV" />
+
+    <Button
+        android:id="@+id/About"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="About" />
+
+</LinearLayout>
