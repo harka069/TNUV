@@ -1,5 +1,5 @@
 package com.example.sparovcek2;
-//test
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -139,6 +140,18 @@ public class MainActivity extends AppCompatActivity {
                 cena.setText("");
                 opis.setText("");
 
+                //
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
+        Button buttonPregled = findViewById(R.id.buttonPregled);
+        buttonPregled.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to launch the new activity
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
             }
         });
     }

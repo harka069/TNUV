@@ -11,6 +11,9 @@ public interface DAO_class {
     @Query("SELECT * FROM [transaction]")
     List<Transaction> getAll();
 
+    @Query("SELECT * FROM [transaction] WHERE date >= :monthstart")
+    List<Transaction> getMonthData(long monthstart);
+
     @Insert
     void insertRecord(Transaction trans);
 
