@@ -34,20 +34,20 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Zbrisi podatke" />
+        android:text="Zbriši podatke" />
 
     <Button
         android:id="@+id/exportCSV"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Export to CSV" />
+        android:text="Izvozi v .CSV" />
 
     <Button
         android:id="@+id/About"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="About" />
+        android:text="O aplikaciji" />
 
 </LinearLayout>

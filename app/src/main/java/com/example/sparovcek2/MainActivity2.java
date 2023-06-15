@@ -34,36 +34,16 @@ public class MainActivity2 extends AppCompatActivity {
         String descritption;
 
         public ListItem(String title, String type, String date, String category, String sum, String descritption) {
-            this.title = "Stevilka vnosa: " +title;
+            //this.title = "Stevilka vnosa: " +title;
             this.type = "Tip: "  +type;
             this.date = "Datum: "+date;
             this.category = "Kategorija: "+ category;
-            this.sum = "Cena:" + sum +" €";
+            this.sum = "Znesek:" + sum +" €";
             this.descritption ="Opis: "+ descritption;
 
         }
     }
     volatile ListItem seznam[];
-
-    ListItem items[] = {
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-            new ListItem("1","Odhodek","12/6/2023","Avto","50","bencin"),
-
-
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +58,10 @@ public class MainActivity2 extends AppCompatActivity {
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(new Date());
                 cal.set(Calendar.DAY_OF_MONTH, cal.getActualMinimum(Calendar.DAY_OF_MONTH));
+                cal.set(Calendar.HOUR_OF_DAY, 0);
+                cal.set(Calendar.MINUTE, 0);
+                cal.set(Calendar.SECOND, 0);
+                cal.set(Calendar.MILLISECOND, 0);
                 Date firstday = cal.getTime();
                 long time = firstday.toInstant().toEpochMilli()/1000L;
                 Log.d("print1", String.valueOf(time));

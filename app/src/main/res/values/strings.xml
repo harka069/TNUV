@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">sparovcek2</string>
+    <string name="app_name">Šparovcek</string>
     <string-array name="array_odhodkov">
         <item>Hrana</item>
         <item>Najemnina</item>

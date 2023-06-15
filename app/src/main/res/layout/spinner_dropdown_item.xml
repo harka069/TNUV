@@ -6,4 +6,5 @@
     android:textAppearance="?android:attr/textAppearanceListItem"
     android:textColor="#ffffff"
     android:textColorLink="#ffffff"
+
     />

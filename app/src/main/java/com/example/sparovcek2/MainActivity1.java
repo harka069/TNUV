@@ -79,7 +79,7 @@ public class MainActivity1 extends AppCompatActivity {
                         intent.setType("text/csv");
                         intent.putExtra(Intent.EXTRA_STREAM, fileUri);
                         startActivity(Intent.createChooser(intent, null));
-
+                    towrite.delete();
                     } catch (IOException e){
                         e.printStackTrace();
                     }
@@ -100,6 +100,16 @@ public class MainActivity1 extends AppCompatActivity {
                 // Create an Intent to launch the new activity
                 Dao.deleteAll();
                 Toast.makeText(MainActivity1.this, "Baza podatkov zbrisana!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button buttonAbout = findViewById(R.id.About);
+        buttonAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to launch the new activity
+                Intent intent = new Intent(MainActivity1.this, MainActivity4.class);
+                startActivity(intent);
             }
         });
 

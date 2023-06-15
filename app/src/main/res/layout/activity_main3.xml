@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
@@ -15,21 +14,21 @@ tools:ignore="HardcodedText">
     android:textSize="24sp"
     android:textStyle="bold" />
 <TextView
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Prihodek/odhodek"
-        android:textSize="18sp"
-        android:textColor="#333333"
-        android:paddingTop="16dp" />
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:text="Prihodek / odhodek"
+    android:textSize="18sp"
+    android:textColor="#333333"
+    android:paddingTop="16dp" />
 <Spinner
-        android:id="@+id/spinnerVrsta"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:textSize="16sp"
-        android:spinnerMode="dialog"
-        android:padding="10dp"
-        android:textColor="#ffffff"
-        android:background="@drawable/spinner_rounded_bg" />
+    android:id="@+id/spinnerVrsta"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:textSize="16sp"
+    android:textColor="#ffffff"
+    android:spinnerMode="dialog"
+    android:padding="10dp"
+    android:background="@drawable/spinner_rounded_bg" />
 <TextView
     android:layout_width="match_parent"
     android:layout_height="48dp"
@@ -39,17 +38,16 @@ tools:ignore="HardcodedText">
     android:paddingTop="16dp" />
 <TextView
     android:id="@+id/editTextDate"
-    android:textColorHint="#ffffff"
-    android:textColor="#ffffff"
     android:layout_width="match_parent"
     android:layout_height="48dp"
+    android:textColorHint="#ffffff"
+    android:textColor="#ffffff"
+    android:textSize="16sp"
     android:hint="Izberi datum"
     android:inputType="date"
     android:padding="15dp"
-    android:textSize="16sp"
     android:autofillHints="date"
     android:background="@drawable/edittext_rounded_bg"/>
-
 
 <TextView
     android:layout_width="match_parent"
@@ -72,7 +70,7 @@ tools:ignore="HardcodedText">
 <TextView
     android:layout_width="match_parent"
     android:layout_height="48dp"
-    android:text="Cena"
+    android:text="Znesek"
     android:textSize="18sp"
     android:textColor="#333333"
     android:paddingTop="16dp" />
@@ -84,7 +82,7 @@ tools:ignore="HardcodedText">
     android:inputType="numberDecimal"
     android:textSize="16sp"
     android:padding="8dp"
-    android:hint="Vnesi odhodek"
+    android:hint="Vnesi znesek prihodka / odhodka"
     android:textColorHint="#ffffff"
     android:autofillHints="payment"
     android:background="@drawable/edittext_rounded_bg" />
@@ -104,7 +102,7 @@ tools:ignore="HardcodedText">
     android:inputType="text"
     android:textSize="16sp"
     android:padding="8dp"
-    android:hint="Opis odhodka"
+    android:hint="Opis prihodka / odhodka"
     android:textColorHint="#ffffff"
     android:background="@drawable/edittext_rounded_bg" />
     <LinearLayout
@@ -117,10 +115,10 @@ tools:ignore="HardcodedText">
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="8dp"
             android:maxLines="1"
-            android:text="Shrani odhodek"
+            android:text="Shrani"
             android:background="@drawable/button_rounded_bg"
             android:textSize="18sp" />
 
@@ -129,7 +127,7 @@ tools:ignore="HardcodedText">
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="50dp"
             android:layout_marginStart="8dp"
             android:maxLines="1"
             android:text="Nazaj"

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
+
+    <TextView
+        android:id="@+id/tekst"
+        android:layout_width="match_parent"
+        android:layout_height="568dp"
+        android:gravity="center_vertical|center"
+        android:text="Aplikacijo sva izdelala Vid Vrh in Krištof Frelih 15.6.2023 za potrebe projekta pri predmetu Terminalske naprave in vmesniki. "
+        android:textColor="#333333"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/buttonNazaj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nazaj"
+        android:background="@drawable/button_rounded_bg"
+        android:textSize="18sp" />
+
+        />
+</LinearLayout>
